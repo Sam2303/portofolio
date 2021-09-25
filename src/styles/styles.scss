@@ -1,0 +1,13 @@
+@import "variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: $secondaryClr;
+  font-size: 1.3em;
+  font-family: "Roboto", sans-serif;
+}
+
+@import "nav.scss";
+@import "home.scss";

@@ -1,0 +1,48 @@
+.navbar {
+  background: $primaryClr;
+  padding: 0.2em;
+  a {
+    color: $secondaryClr;
+    margin: 1%;
+    text-decoration: none;
+  }
+  .links {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    a {
+      color: $secondaryClr;
+      margin: 1%;
+      text-decoration: none;
+    }
+  }
+  .burgerMenu {
+    position: absolute;
+    right: 0;
+    top: 3.5%;
+    font-size: 150%;
+    margin-right: 4%;
+    cursor: pointer;
+    i {
+      color: $secondaryClr;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    .links {
+      display: flex;
+      flex-direction: row;
+      a {
+        margin: 2vh;
+      }
+    }
+    .burgerMenu {
+      display: none;
+    }
+  }
+}

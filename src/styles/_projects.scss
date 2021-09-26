@@ -1,0 +1,47 @@
+.projectsContainer{
+    background: $primaryClr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    .project{
+        color: $secondaryClr;
+        width: 90%;
+        
+        > *{
+            margin: 3%;
+        }
+        padding: 0%;
+        margin: 2%;
+        .projectLinks{
+            a{
+                color: $neutralClr;
+                text-decoration: none;
+                background: $secondaryClr;
+                padding: 2%;
+                margin: 1%;
+                border-radius: 15px;
+            }
+        }
+    }
+}
+
+@media(min-width: 800px){
+    .projectsContainer{
+        flex-direction: row;
+        flex-wrap: wrap;
+        .project{
+            width: 30%;
+            margin: 1%;
+            .projectLinks{
+                margin: 1% ;
+                a{
+                    font-size: 90%;
+                    width: min-content;
+                    padding: 1.5%;
+                }
+            }
+        }
+    }
+}

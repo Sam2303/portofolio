@@ -19,19 +19,17 @@ const Projects = () => {
     }
     fetchProjects();
   }, []);
-  console.log(projects);
-
   return (
     <div className="projectsContainer">
       {projects.map((project) => {
-          console.log(project.fields.Site)
         if (project.fields.Site === undefined) {
           return (
             <div className="project">
               <h3>{project.fields.Name}</h3>
               <p>{project.fields.Description}</p>
+              <p><b>Tech Stack: {project.fields.TechStack}</b></p>
               <div className="projectLinks">
-              <Link to={project.fields.Code}>Code</Link>
+                <Link to={project.fields.Code}>Code</Link>
               </div>
             </div>
           );
@@ -40,15 +38,16 @@ const Projects = () => {
             <div className="project">
               <h3>{project.fields.Name}</h3>
               <p>{project.fields.Description}</p>
+              <p><b>Tech Stack: {project.fields.TechStack}</b></p>
               <div className="projectLinks">
-              <Link to={project.fields.Code}>Code</Link>
-              <Link to={project.fields.Site}>Site</Link>
+                <Link to={project.fields.Code}>Code</Link>
+                <Link to={project.fields.Site}>Live Site</Link>
               </div>
             </div>
           );
         }
       })}
-      </div>
+    </div>
   );
 };
 

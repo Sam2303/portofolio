@@ -1,0 +1,32 @@
+.aboutContainer {
+    h2{
+        text-align: center;
+    }
+  .techStackContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .tech {
+        text-align: center;
+      margin: 0;
+      width: 30%;
+      margin: 1%;
+      img {
+        width: 80%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (min-width:800px) {
+    .aboutContainer{
+        .techStackContainer{
+            .tech{
+                width: 13%;
+            }
+        }
+    }
+}

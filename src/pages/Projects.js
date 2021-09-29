@@ -1,12 +1,53 @@
-import React from 'react'
-import Projects from '../components/Projects'
+import React, { useState, useEffect } from "react";
+import Airtable from "airtable";
 
-const s = () => {
-    return (
-        <div>
-            <Projects />
-        </div>
-    )
-}
+const Projects = () => {
+  const [projects, setProjects] = useState([]);
 
-export default s
+  useEffect(() => {
+    async function fetchProjects() {
+      var base = new Airtable({
+        apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
+      }).base(process.env.REACT_APP_AIRTABLE_BASE_ID);
+      const table = base("Projects");
+      try {
+        setProjects(await table.select({sort: [{field: "id", direction: "asc"}]}).all());
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchProjects();
+  }, []);
+  return (
+    <div className="projectsContainer">
+      {projects.map((project) => {
+        if (project.fields.Site === undefined) {
+          return (
+            <div className="project">
+              <h3>{project.fields.Name}</h3>
+              <p>{project.fields.Description}</p>
+              <p><b>Tech Stack: {project.fields.TechStack}</b></p>
+              <div className="projectLinks">
+                <a href={project.fields.Code} target="_blank"rel="noreferrer">Code</a>
+              </div>
+            </div>
+          );
+        } else {
+          return (
+            <div className="project">
+              <h3>{project.fields.Name}</h3>
+              <p>{project.fields.Description}</p>
+              <p><b>Tech Stack: {project.fields.TechStack}</b></p>
+              <div className="projectLinks">
+                <a href={project.fields.Code} target="_blank"rel="noreferrer">Code</a>
+                <a href={project.fields.Site} target="_blank"rel="noreferrer">Live Site</a>
+              </div>
+            </div>
+          );
+        }
+      })}
+    </div>
+  );
+};
+
+export default Projects

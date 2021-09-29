@@ -33,7 +33,6 @@ const Nav = () => {
     }
     fetchCV();
   }, []);
-  console.log(CV);
   return (
     <Router>
       <nav className="navbar">

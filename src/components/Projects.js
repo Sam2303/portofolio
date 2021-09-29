@@ -22,7 +22,6 @@ const Projects = () => {
     }
     fetchProjects();
   }, []);
-  console.log(projects);
   return (<>
   <h2>Projects</h2>
     <div className="projectsContainer">

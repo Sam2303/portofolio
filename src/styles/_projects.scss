@@ -1,18 +1,19 @@
 .projectsContainer {
-  background: $primaryClr;
+  background: $secondaryClr;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  padding: 2%;
   .project {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    background: $primaryClr;
     color: $secondaryClr;
-    width: 95%;
+    width: 100%;
+    border-radius: 15px;
     > * {
       margin: 3%;
     }
@@ -31,14 +32,15 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .projectsContainer {
     flex-direction: row;
     flex-wrap: wrap;
-
+    align-items: unset;
     .project {
       width: 30%;
-      margin: 1.5vh;
+      margin: 1vh;
+      padding: 0.5%;
       .projectLinks {
         margin: 1vh;
         a {

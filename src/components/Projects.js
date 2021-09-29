@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 import Airtable from "airtable";
 
 const Projects = () => {
@@ -52,7 +53,9 @@ const Projects = () => {
           );
         }
       })}
+      <Link to={"/projects"} className="moreButton">More Projects</Link>
     </div>
+      
     </>
   );
 };

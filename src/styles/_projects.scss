@@ -36,6 +36,13 @@ h2{
       }
     }
   }
+  a{
+    margin: 3vh;
+    padding: 3%;
+    border-radius: 15px;
+    background: $primaryClr;
+    color: $secondaryClr;
+  }
 }
 
 @media (min-width: 1050px) {
@@ -43,6 +50,9 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: unset;
+    a{
+      padding: 1%;
+    }
     .project {
       width: 45%;
       margin: 1vh;

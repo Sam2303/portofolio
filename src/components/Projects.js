@@ -22,7 +22,12 @@ const Projects = () => {
     }
     fetchProjects();
   }, []);
+<<<<<<< HEAD
   return (
+=======
+  return (<>
+  <h2>Projects</h2>
+>>>>>>> 2ce46cfcbac0da6bb6abdebe975d0acde607ab96
     <div className="projectsContainer">
       <h2>Projects</h2>
       <div className="projects">

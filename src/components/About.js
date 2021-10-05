@@ -1,6 +1,6 @@
 import React from 'react'
-import TechStack from '../components/TechStack'
-import AboutText from '../components/AboutText'
+import TechStack from './TechStack'
+import AboutText from './AboutText'
 
 const About = () => {
     return (

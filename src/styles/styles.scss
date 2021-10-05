@@ -1,16 +1,17 @@
 @import "variables.scss";
 
-body {
-  background: $secondaryClr;
-  font-size: 1.3em;
+*{
   font-family: "Roboto", sans-serif;
+  color: $primaryClr;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 @import "nav.scss";
 @import "home.scss";
+@import "about.scss";
 @import "projects.scss";
-@import "techStack.scss";
-@import "aboutText.scss";
+@import "contact.scss";
+@import "circles.scss";
 

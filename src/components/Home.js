@@ -1,20 +1,17 @@
 import React from "react";
-import profilePic from "../resources/profile.jpg";
-import Projects from "../components/Projects";
+import profilePic from "../resources/me.png";
 
 const Home = () => {
   return (
     <div className="homeContainer">
       <div className="welcomeMsg">
-        <h2>Hello, I am Sam Parsons</h2>
+        <h2>Hi, I'm Sam</h2>
         <p>Graduate Computer Scientist</p>
-        <p>
-          Solution-oriented Software Developer, with a high interest in Web
-          Technologies
-        </p>
+        <p>Solution-oriented Software Developer</p>
+      </div>
+      <div className="pictureContainer">
         <img src={profilePic} alt="Sam Parsons in there graduation Grown"></img>
       </div>
-      <Projects />
     </div>
   );
 };

@@ -24,7 +24,7 @@ const TechStack = () => {
     fetchTechStack();
   }, []);
 
-  return (<>
+  return (<div className="techStack">
   <h2>Tech Stack</h2>
     <div className="techStackContainer">
       
@@ -38,7 +38,7 @@ const TechStack = () => {
         );
       })}
     </div>
-    </>
+    </div>
   );
 };
 

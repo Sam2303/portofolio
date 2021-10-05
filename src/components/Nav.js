@@ -1,9 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Airtable from "airtable";
-import Home from "../pages/Home";
-import Projects from "../pages/Projects";
-import About from "../pages/About";
 
 const Nav = () => {
   const links = useRef(null);
@@ -34,28 +30,22 @@ const Nav = () => {
     fetchCV();
   }, []);
   return (
-    <Router>
       <nav className="navbar">
-        <Link to={"/"}>
-          <h1>Sam Parsons</h1>
-        </Link>
+        <a href="#home">
+          <h1>SP</h1>
+        </a>
 
         <div className="burgerMenu" onClick={navToggle}>
           <i className="fas fa-bars"></i>
         </div>
         <div className="links" ref={links}>
-          <Link to={"/about"}>About</Link>
-          <Link to={"/projects"}>Projects</Link>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
           <a href={CV} target="_blank" rel="noreferrer">CV</a>
         </div>
       </nav>
 
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/projects" component={Projects} />
-      </Switch>
-    </Router>
   );
 };
 

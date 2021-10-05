@@ -26,7 +26,6 @@ const AboutText = () => {
             <h2>About Me</h2>
             {
               aboutText.map((para) => {
-                console.log(para.fields.aboutText);
                 return <p>{para.fields.aboutText}</p>
               })
             }

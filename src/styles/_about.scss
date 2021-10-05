@@ -1,0 +1,62 @@
+.aboutContainer {
+  font-size: 170%;
+  text-align: center;
+  padding-top: 60px;
+  .aboutText {
+    h2 {
+      margin: 4%;
+    }
+    p {
+      margin: 1% 2.5%;
+      width: 95%;
+      font-size: 80%;
+    }
+  }
+  .techStack {
+      h2{
+        margin: 3vh;
+      }
+    .techStackContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .tech {
+        text-align: center;
+        margin: 0;
+        width: 20%;
+        margin: 1%;
+        img {
+          width: 80%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .aboutContainer {
+    font-size: 180%;
+    .aboutText {
+      p {
+        margin: 1% 17.5%;
+        width: 70%;
+      }
+    }
+    .techStack {
+      text-align: center;
+      h2 {
+        margin: 5vh;
+      }
+      .techStackContainer {
+        margin: 0 10%;
+        width: 80%;
+        .tech {
+          width: 7%;
+        }
+      }
+    }
+  }
+}

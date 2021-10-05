@@ -1,0 +1,46 @@
+.contactContainer{
+    margin-top: 2vh;
+    font-size:170%;
+    text-align: center;
+    padding-top: 60px;
+    .linksContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .link{
+            border: 2px solid $primaryClr;
+            width: 90%;
+            margin: 2%;
+        }
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+@media(min-width: 800px){
+    .contactContainer{
+        height: 50vh;
+        font-size: 180%;
+        h2{
+            margin: 2% 0 1% 0;
+        }
+        .linksContainer{
+            .link{
+                width: 60%;
+                margin: 1%;
+                border: 3px solid $primaryClr;
+                display: block;
+                position: relative;
+                font-size: 120%;
+                padding: 0.5%;
+                i{
+                    position: absolute;
+                    left: 1%;
+                    top: 13px;
+                }
+            }
+        }
+    }
+}

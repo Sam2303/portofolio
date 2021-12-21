@@ -27,7 +27,7 @@ const Nav = () => {
         console.error(error);
       }
     }
-    fetchCV();
+    fetchCV()
   }, []);
   return (
       <nav className="navbar">

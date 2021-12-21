@@ -1,27 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Airtable from "airtable";
+import {fetchAirtable} from "../api/Airtable";
 
 const TechStack = () => {
   const [techStack, setTechStack] = useState([]);
 
   useEffect(() => {
-    async function fetchTechStack() {
-      var base = new Airtable({
-        apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
-      }).base(process.env.REACT_APP_AIRTABLE_BASE_ID);
-      const table = base("TechStack");
-      try {
-        const techStack = await table.select({}).all();
-        setTechStack(
-          techStack.sort(
-            (a, b) => parseFloat(a.fields.ID) - parseFloat(b.fields.ID)
-          )
-        );
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchTechStack();
+    fetchAirtable("TechStack").then( (res) => {
+      setTechStack(res)
+    } )
   }, []);
 
   return (<div className="techStack">

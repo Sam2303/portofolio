@@ -1,26 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Airtable from "airtable";
+import {fetchAirtable} from "../api/Airtable";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    async function fetchProjects() {
-      var base = new Airtable({
-        apiKey: process.env.REACT_APP_AIRTABLE_API_KEY,
-      }).base(process.env.REACT_APP_AIRTABLE_BASE_ID);
-      const table = base("Projects");
-      try {
-        setProjects(
-          await table
-            .select({ sort: [{ field: "id", direction: "asc" }] })
-            .all()
-        );
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchProjects();
+    fetchAirtable("projects").then((result) => {
+      setProjects(result)
+    })
   }, []);
   return (
     <div className="projectsContainer">

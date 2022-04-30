@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './styles/styles.scss'
+// import OldApp from './OldApp';
+import PortfolioRoot from './PortfolioRoot'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 ReactDOM.render(
-    <App />, document.getElementById('root')
+    <PortfolioRoot />, document.getElementById('root')
 );

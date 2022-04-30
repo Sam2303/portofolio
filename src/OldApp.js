@@ -1,10 +1,10 @@
-import Nav from "./components/Nav";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Nav from "./oldComponents/Nav";
+import Home from "./oldComponents/Home";
+import About from "./oldComponents/About";
+import Projects from "./oldComponents/Projects";
+import Contact from "./oldComponents/Contact";
 
-function App() {
+function OldApp() {
   return (
     <div className="App">
       <Nav />
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default OldApp;

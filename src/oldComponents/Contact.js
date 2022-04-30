@@ -5,11 +5,11 @@ const Contact = () => {
     <div className="contactContainer">
       <h2>Contact Me</h2>
       <div className="linksContainer">
-        <a href="mailto:sjp2303@hotmail.com" target="_blank" className="link">
+        <a href="mailto:sjp2303@hotmail.com" target="_blank" rel="noreferrer" className="link">
           <i class="far fa-envelope"></i>
           <p>Email</p>
         </a>
-        <a href="https://Github.com/Sam2303" target="_blank" className="link">
+        <a href="https://Github.com/Sam2303" target="_blank" rel="noreferrer" className="link">
           <i class="fab fa-github"></i>
           <p>Github</p>
         </a>
@@ -17,6 +17,7 @@ const Contact = () => {
           href="https://www.linkedin.com/in/sam-parsons-31a73720b/"
           target="_blank"
           className="link"
+          rel="noreferrer"
         >
           <i class="fab fa-linkedin"></i>
           <p>LinkedIn</p>

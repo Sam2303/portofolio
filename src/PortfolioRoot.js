@@ -12,11 +12,11 @@ const PortfolioRoot = () => {
       <Header />
       <div className="d-flex justify-content-center">
         <div className="col-md-10">
-          <WelcomePage className="mb-4" />
-          <AboutMe className='mt-4' />
-          <TechStack />
-          <Projects />
-          <Contact />
+          <section id='home'><WelcomePage/></section>
+          <section id='about'><AboutMe/></section>
+          <section id='tech'><TechStack/></section>
+          <section id='projects'><Projects/></section>
+          <section id='contact'><Contact/></section>
         </div>
       </div>
     </div>

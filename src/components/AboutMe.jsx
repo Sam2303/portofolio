@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
 import { fetchAirtable } from '../api/Airtable'
 
-const AboutMe = props => {
+const AboutMe = () => {
     const [aboutMeText, setAboutMeText] = useState([])
-    fetchAirtable("About", setAboutMeText)
-  return (
-    <div className='text-center mx-3'>
-        <h1 className="m-4">About Me</h1>
-        <div className='lead'>
-            {aboutMeText.map(paragraph => {
-                return <p>{paragraph.fields.aboutText}</p>
-            })}
+    useEffect(() => { fetchAirtable("About", setAboutMeText) }, []);
+
+    return (
+        <div className='text-center mx-3'>
+            <h1 className="m-4 display-2">About Me</h1>
+            <div className='lead'>
+                {aboutMeText.map(paragraph => {
+                    return <p>{paragraph.fields.aboutText}</p>
+                })}
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 AboutMe.propTypes = {}

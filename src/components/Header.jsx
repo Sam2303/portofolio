@@ -1,26 +1,26 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { fetchCv } from '../api/Airtable'
 
-const Header = (props) => {
+const Header = () => {
+  const [cv, setCV] = useState('');
+  fetchCv(setCV);
   return (
-    <Navbar expand="lg" bg="light">
+    <Navbar expand="lg" bg="light" fixed='top'>
       <Container>
-        <Navbar.Brand>Sam Parsons</Navbar.Brand>
+        <Navbar.Brand href='#home'>Sam Parsons</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">About</Nav.Link>
-            <Nav.Link href="/">Tech Stack</Nav.Link>
-            <Nav.Link href="/">Projects</Nav.Link>
-            <Nav.Link href="/">CV</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#tech">Tech Stack</Nav.Link>
+            <Nav.Link href="#projects">Projects</Nav.Link>
+            <Nav.Link href={cv}>CV</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 };
-
-Nav.propTypes = {};
 
 export default Header;

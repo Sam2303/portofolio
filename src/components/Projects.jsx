@@ -24,8 +24,8 @@ const Projects = () => {
                                     <Card.Text>{project.fields.Description}</Card.Text>
                                     <Card.Text className='text-white bg-dark'>{techStack}</Card.Text>
                                 </Card.Body>
-                                {liveSite && <Button variant='secondary' onClick={liveSite} className='m-1'>Live Site</Button>}
-                                <Button variant='primary' onClick={project.fields.Code} className='m-1'>GitHub</Button>
+                                {liveSite && <Button variant='secondary' onClick={() => window.open(liveSite)} className='m-1'>Live Site</Button>}
+                                <Button variant='primary' onClick={() => window.open(project.fields.Code)} className='m-1'>GitHub</Button>
                             </Card>
                         </Col>
                     )
